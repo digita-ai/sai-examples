@@ -1,0 +1,9 @@
+
+PREFIX st: <http://www.w3.org/ns/shapetrees#>
+PREFIX ex: <https://example.org/>
+
+<>
+  a ex:Task ;
+  ex:hasDescription "This is a task that is still backlogged." ;
+  ex:status ex:Backlogged ;
+  ex:hasAttachment <./attachment001.pdf> .

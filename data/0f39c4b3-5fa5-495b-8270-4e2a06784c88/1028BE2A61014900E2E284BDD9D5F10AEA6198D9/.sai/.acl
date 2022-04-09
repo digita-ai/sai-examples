@@ -1,0 +1,16 @@
+
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+
+### Only Projectron has access to their .sai container with Access Needs.
+
+<#client>
+    a acl:Authorization;
+    acl:agent <https://use.id/projectron>;
+    acl:accessTo <./>;
+    acl:default <./>;
+    acl:mode 
+        acl:Read,
+        acl:Write,
+        acl:Append,
+        acl:Delete,
+        acl:Control.

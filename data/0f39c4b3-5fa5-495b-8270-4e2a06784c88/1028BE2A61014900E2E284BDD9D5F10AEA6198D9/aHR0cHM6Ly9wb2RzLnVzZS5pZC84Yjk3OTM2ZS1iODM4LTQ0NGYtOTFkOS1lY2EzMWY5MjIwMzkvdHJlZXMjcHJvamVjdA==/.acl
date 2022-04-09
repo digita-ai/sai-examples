@@ -1,0 +1,35 @@
+
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+
+### Access policies for the client (and owner) must be repeated in nested ACLs.
+
+<#client>
+    a acl:Authorization;
+    acl:agent <https://use.id/projectron>;
+    acl:accessTo <./>;
+    acl:default <./>;
+    acl:mode 
+        acl:Read,
+        acl:Write,
+        acl:Append,
+        acl:Delete,
+        acl:Control.
+    
+<#owner>
+    a acl:Authorization;
+    acl:agent <https://use.id/alice>;
+    acl:accessTo <./>;
+    acl:default <./>;
+    acl:mode 
+        acl:Read.
+
+### Additionally, access can be granted to third parties (e.g. Bob), in sync with the Access Needs.
+
+<#3e8ebb79-b836-4ea6-a984-c8ee0d18231d>
+    a acl:Authorization;
+    acl:agent <https://use.id/bob>;
+    acl:accessTo <./>;
+    acl:default <./>;
+    acl:mode 
+        acl:Read,
+        acl:Create.

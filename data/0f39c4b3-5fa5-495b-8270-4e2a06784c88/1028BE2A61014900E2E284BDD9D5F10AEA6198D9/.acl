@@ -1,0 +1,27 @@
+
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+
+### By default, Projectron has full access to their container in Alice's pod.
+
+<#client>
+    a acl:Authorization;
+    acl:agent <https://use.id/projectron>;
+    acl:accessTo <./>;
+    acl:default <./>;
+    acl:mode 
+        acl:Read,
+        acl:Write,
+        acl:Append,
+        acl:Delete,
+        acl:Control.
+
+### If so desired, Alice can also be granted (limited) access to this container.
+### Note that this may pose privacy and/or security risks.
+
+<#owner>
+    a acl:Authorization;
+    acl:agent <https://use.id/alice>;
+    acl:accessTo <./>;
+    acl:default <./>;
+    acl:mode 
+        acl:Read.

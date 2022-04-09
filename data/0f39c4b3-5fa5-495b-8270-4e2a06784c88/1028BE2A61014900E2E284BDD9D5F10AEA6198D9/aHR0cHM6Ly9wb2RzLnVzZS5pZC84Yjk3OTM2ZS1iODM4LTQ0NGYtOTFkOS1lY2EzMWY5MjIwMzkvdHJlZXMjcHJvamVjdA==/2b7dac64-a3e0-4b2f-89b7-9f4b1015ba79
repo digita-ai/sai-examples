@@ -1,0 +1,8 @@
+
+PREFIX tasks: <https://pods.use.id/0f39c4b3-5fa5-495b-8270-4e2a06784c88/1028BE2A61014900E2E284BDD9D5F10AEA6198D9/aHR0cHM6Ly9wb2RzLnVzZS5pZC84Yjk3OTM2ZS1iODM4LTQ0NGYtOTFkOS1lY2EzMWY5MjIwMzkvdHJlZXMjdGFzaw==/>
+
+<>
+  a ex:Project ;
+  ex:title "Some Demo Project" ;
+  ex:hasTask task:4bd2d631-656a-4ced-8999-76fd0b07838a\/ ;
+  ex:hasTask task:76a569dc-5ca9-471d-ba27-0977af14af56\/ .

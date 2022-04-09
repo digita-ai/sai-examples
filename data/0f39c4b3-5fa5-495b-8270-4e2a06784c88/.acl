@@ -1,0 +1,16 @@
+
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+
+### By default, Alice has full access to her pod.
+
+<#owner>
+    a acl:Authorization;
+    acl:agent <https://use.id/alice>;
+    acl:accessTo <./>;
+    acl:default <./>;
+    acl:mode 
+        acl:Read,
+        acl:Write,
+        acl:Append,
+        acl:Delete,
+        acl:Control.

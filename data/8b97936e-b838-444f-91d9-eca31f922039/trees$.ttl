@@ -1,0 +1,44 @@
+
+PREFIX st: <http://www.w3.org/ns/shapetrees#>
+PREFIX ex: <https://example.org/>
+
+<#example-description-set-en>
+  a st:DescriptionSet ;
+  st:usesLanguage "en"^^xsd:language .
+
+### Projects
+
+<#project>
+  a st:ShapeTree ;
+  st:expectsType st:Resource ;
+  st:shape <./shapes#project> ;
+  st:references [
+    st:referencesShapeTree <#task> ;
+    st:viaShapePath "@<./shapes#project>~ex:hasTask"
+  ] .
+  
+<#example-description-project-en> {
+  a st:Description ;
+  st:inDescriptionSet <#example-description-set-en> ;
+  st:describes <#project> ;
+  skos:prefLabel "Project"@en ;
+  skos:definition "A project referencing tasks."@en ;
+  st:describesInstance ex:hasTitle .
+}
+
+### Tasks
+
+<#task>
+  a st:ShapeTree ;
+  st:expectsType st:Container ;
+  st:shape <./shapes#task> ;
+  st:contains st:NonRDFResourceTree .
+
+<#example-description-task-en> {
+  a st:Description ;
+  st:inDescriptionSet <#example-description-set-en> ;
+  st:describes <#task> ;
+  skos:prefLabel "Task"@en ;
+  skos:definition "A task, assignable to employees, containing attachments"@en ;
+  st:describesInstance ex:hasDescription .
+}

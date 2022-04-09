@@ -1,0 +1,22 @@
+
+PREFIX st: <http://www.w3.org/ns/shapetrees#>
+PREFIX ex: <https://example.org/>
+
+<#project> {
+  a [ex:Project] ;
+  ex:hasTitle xsd:string ;
+  ex:hasTask @<#task> +
+}
+
+<#task> {
+  a [ex:Task] ;
+  ex:hasDescription xsd:string ;
+  ex:hasAttachment @st:NonRDFResourceTree * ;
+  ex:taskManagerReference ( xsd:string OR IRI ) ? ;
+  (
+    ex:status ex:Backlogged
+  |
+    ex:status [ ex:InProgress ex:Done ] ;
+    ex:assignee @ex:Employee
+  )
+}

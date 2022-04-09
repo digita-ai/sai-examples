@@ -1,0 +1,64 @@
+
+PREFIX interop: <http://www.w3.org/ns/solid/interop#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX acl: <http://www.w3.org/ns/auth/acl#>
+PREFIX trees: <https://pods.use.id/8b97936e-b838-444f-91d9-eca31f922039/trees#>
+
+### This is a request from Bob to Alice ...
+
+<>
+  a interop:AccessRequest ;
+  interop:fromSocialAgent <https://use.id/bob> ;
+  interop:toSocialAgent <https://use.id/alice> ;
+  interop:hasAccessNeedGroup <#needs> .
+
+<#desc-en>
+  a interop:AccessDescriptionSet ;
+  interop:usesLanguage "en"^^xsd:language .
+
+### ... listing some needs for him to contribute to Alice's projects:
+
+<#needs>
+  a interop:AccessNeedGroup ;
+  interop:accessNecessity interop:AccessRequired ;
+  interop:accessScenario interop:PersonalAccess ;
+  interop:authenticatesAs interop:SocialAgent ;
+  interop:hasAccessDescriptionSet <#desc-en> ;
+  interop:hasAccessNeed <#need-projects> ;
+  interop:hasAccessNeed <#need-tasks> .
+
+<#desc-needs-en>
+  a interop:AccessNeedGroupDescription ;
+  interop:inAccessDescriptionSet <#desc-en> ;
+  interop:hasAccessNeedGroup <#needs> ;
+  skos:prefLabel "Let Bob contribute to projects"@en ;
+  skos:description "Allow Bob to contribute to your projects. He will be able to read them, and create new ones, as well as modify tasks belonging to them. He won't be able to modify or delete existing projects, or delete existing tasks."@en .
+
+### Bob needs access to read and create projects ...
+
+<#need-projects>
+  a interop:AccessNeed ;
+  interop:registeredShapeTree trees:project ;
+  interop:accessNecessity interop:accessRequired ;
+  interop:accessMode acl:Read, acl:Create .
+
+<#desc-need-projects-en>
+  a interop:AccessNeedDescription ;
+  interop:inAccessDescriptionSet <#desc-en> ;
+  interop:hasAccessNeed <#need-projects> ;
+  skos:prefLabel "Allow Bob to read your projects."@en .
+
+### ... and read and create the tasks that are refered to in those projects.
+
+<#need-tasks>
+  a interop:AccessNeed ;
+  interop:registeredShapeTree trees:task ;
+  interop:accessNecessity interop:accessRequired ;
+  interop:accessMode acl:Read, acl:Update ;
+  interop:inheritsFromNeed <#need-projects> .
+
+<#desc-need-tasks-en>
+  a interop:AccessNeedDescription ;
+  interop:inAccessDescriptionSet <#desc-en> ;
+  interop:hasAccessNeed <#need-tasks> ;
+  skos:prefLabel "Let Bob to read and modify tasks belonging to your projects."@en .

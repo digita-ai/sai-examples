@@ -1,0 +1,26 @@
+{
+  "name": "@digita-ai/useid-pods",
+  "version": "0.1.0-dev.104",
+  "description": "Pod server configuration for use.id",
+  "author": "Digita <info@digita.ai> (https://digita.ai/)",
+  "license": "EUPL-1.2",
+  "private": true,
+  "scripts": {
+    "start": "shx rm -rf tmp/ && shx mkdir tmp && shx cp -r data/. tmp/ && community-solid-server -m . -c config/default.json --rootFilePath ./tmp -p 3002",
+    "start:watch": "npm run start"
+  },
+  "dependencies": {
+    "@solid/community-server": "3.0.0"
+  },
+  "devDependencies": {
+    "shx": "^0.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digita-ai/useid.git",
+    "directory": "packages/useid-registry"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

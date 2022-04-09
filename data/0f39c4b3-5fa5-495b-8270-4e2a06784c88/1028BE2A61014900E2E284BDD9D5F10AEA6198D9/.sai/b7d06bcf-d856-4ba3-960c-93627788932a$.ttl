@@ -1,0 +1,50 @@
+  
+PREFIX interop: <http://www.w3.org/ns/solid/interop#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX acl: <http://www.w3.org/ns/auth/acl#>
+PREFIX trees: <https://pods.use.id/8b97936e-b838-444f-91d9-eca31f922039/trees#>
+PREFIX tasks: <https://pods.use.id/0f39c4b3-5fa5-495b-8270-4e2a06784c88/1028BE2A61014900E2E284BDD9D5F10AEA6198D9/aHR0cHM6Ly9wb2RzLnVzZS5pZC84Yjk3OTM2ZS1iODM4LTQ0NGYtOTFkOS1lY2EzMWY5MjIwMzkvdHJlZXMjdGFzaw==/>
+
+### This is a request from Cooper to Alice ...
+
+<>
+  a interop:AccessRequest ;
+  interop:fromSocialAgent <https://use.id/cooper> ;
+  interop:toSocialAgent <https://use.id/alice> ;
+  interop:hasAccessNeedGroup <#needs> .
+
+<#desc-en>
+  a interop:AccessDescriptionSet ;
+  interop:usesLanguage "en"^^xsd:language .
+
+### ... listing the need for him to read a specific task ...
+
+<#needs>
+  a interop:AccessNeedGroup ;
+  interop:accessNecessity interop:AccessRequired ;
+  interop:accessScenario interop:PersonalAccess ;
+  interop:authenticatesAs interop:SocialAgent ;
+  interop:hasAccessDescriptionSet <#desc-en> ;
+  interop:hasAccessNeed <#need-specific-task> .
+
+<#desc-needs-en>
+  a interop:AccessNeedGroupDescription ;
+  interop:inAccessDescriptionSet <#desc-en> ;
+  interop:hasAccessNeedGroup <#needs> ;
+  skos:prefLabel "Let Cooper read task task0091"@en ;
+  skos:description "Allow Cooper to read this specific, but nothing else."@en .
+
+### ... and thus pointing to that task.
+
+<#need-specific-tasks>
+  a interop:AccessNeed ;
+  interop:registeredShapeTree trees:task ;
+  interop:accessNecessity interop:accessRequired ;
+  interop:accessMode acl:Read ;
+  interop:hasDataInstance tasks:4bd2d631-656a-4ced-8999-76fd0b07838a\/ .
+
+<#desc-need-specific-task-en>
+  a interop:AccessNeedDescription ;
+  interop:inAccessDescriptionSet <#desc-en> ;
+  interop:hasAccessNeed <#need-specific-task> ;
+  skos:prefLabel "Let Cooper read task task0091."@en .

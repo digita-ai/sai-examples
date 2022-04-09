@@ -1,0 +1,10 @@
+
+PREFIX st: <http://www.w3.org/ns/shapetrees#>
+PREFIX ex: <https://example.org/>
+
+<>
+  a ex:Task ;
+  ex:hasDescription "This is a task in progress." ;
+  ex:status ex:InProgress ;
+  ex:assignee ex:my-colleague ;
+  ex:taskManagerReference "task0091" .
