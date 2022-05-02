@@ -1,0 +1,19 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix interop: <http://www.w3.org/ns/solid/interop#>.
+@prefix alice: <http://localhost:3002/alice/>.
+@prefix appcreatorexample: <https://appcreator.example/>.
+@prefix appexample: <http://localhost:3002/app-example/profile/card#me>.
+@prefix alice-authorization: <http://localhost:3002/alice/authorization/>.
+
+
+alice-authorization:anAccessConsent
+  a interop:AccessConsent ;
+  interop:grantedBy alice: ;
+  interop:grantedWith appcreatorexample: ;
+  interop:grantedAt "2020-09-05T06:15:01Z"^^xsd:dateTime ;
+  interop:grantee appexample: ;
+  interop:hasAccessNeedGroup appexample: ;
+  interop:hasDataConsent 
+    alice-authorization:aDataConsent .

@@ -1,0 +1,7 @@
+@prefix interop: <http://www.w3.org/ns/solid/interop#>.
+@prefix alice-authorization: <http://localhost:3002/alice/authorization/>.
+
+alice-authorization:
+  a interop:AccessConsentRegistry;
+  interop:hasAccessConsent
+    alice-authorization:anAccessConsent .
