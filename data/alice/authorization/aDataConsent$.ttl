@@ -1,0 +1,20 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+@prefix interop: <http://www.w3.org/ns/solid/interop#>.
+@prefix alice: <http://localhost:3002/alice/>.
+@prefix appexample: <http://localhost:3002/app-example/>.
+@prefix alice-authorization: <http://localhost:3002/alice/authorization/>.
+@prefix alice-agents: <http://localhost:3002/alice/agents/>.
+@prefix pm-shapetrees: <http://data.example/shapetrees/pm#>.
+
+alice-authorization:aDataConsent
+  a interop:DataConsent ;
+  interop:dataOwner alice: ;
+  interop:grantee appexample: ;
+  interop:registeredShapeTree pm-shapetrees:ProjectTree ;
+  interop:accessMode acl:Read, acl:Create ;
+  interop:creatorAccessMode acl:Update, acl:Delete ;
+  interop:scopeOfConsent interop:All ;
+  interop:satisfiesAccessNeed appexample: .

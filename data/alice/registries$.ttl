@@ -1,0 +1,8 @@
+@prefix interop: <http://www.w3.org/ns/solid/interop#>.
+@prefix alice: <http://localhost:3002/alice/>.
+
+alice:registries
+    a interop:RegistrySet;
+    interop:hasAgentRegistry alice:agents\/ ;
+    interop:hasAccessConsentRegistry alice:authorization\/ ;
+    interop:hasDataRegistry alice:data\/.

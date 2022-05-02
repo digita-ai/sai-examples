@@ -1,0 +1,8 @@
+@prefix interop: <http://www.w3.org/ns/solid/interop#>.
+@prefix app-example: <http://localhost:3002/app-example/>.
+
+app-example:registries
+    a interop:RegistrySet;
+    interop:hasAgentRegistry app-example:agents\/ ;
+    interop:hasAccessConsentRegistry app-example:authorization\/ ;
+    interop:hasDataRegistry app-example:data\/.
