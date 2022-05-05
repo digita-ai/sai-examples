@@ -1,0 +1,16 @@
+@prefix interop: <http://www.w3.org/ns/solid/interop#>
+@prefix acl: <http://www.w3.org/ns/auth/acl#>
+@prefix solidtrees: <https://shapetrees.example/solid/>
+@prefix projectron: <https://projectron.example/>
+@prefix needs: <https://projectron.example/needs#>
+@prefix acme: <https://acme.example/>
+@prefix pm: <https://vocab.example/pm/>
+@prefix pm-shapetrees: <http://data.example/shapetrees/pm#>
+
+projectron:\#id
+  a interop:Application ;
+  interop:applicationName "Projectron" ;
+  interop:applicationDescription "Manage projects with ease" ;
+  interop:applicationAuthor acme:\#id ;
+  interop:applicationThumbnail acme:thumb.svg ;
+  interop:hasAccessNeedGroup needs:need-group-pm .

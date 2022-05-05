@@ -1,0 +1,18 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+@prefix interop: <http://www.w3.org/ns/solid/interop#>
+@prefix jack: <https://localhost:3000/jackpapa/>
+@prefix jarvis: <https://jarvis.example/>
+@prefix projectron: <https://projectron.example/>
+@prefix authz-agent: <https://trusted.example/>
+@prefix jack-agents: <https://localhost:3000/jackpapa/agents/>
+
+jack-agents:2f2f3628\/
+  a interop:ApplicationRegistration ;
+  interop:registeredBy jack:\#id ;
+  interop:registeredWith jarvis:\#id ;
+  interop:registeredAt "2020-04-04T20:15:47.000Z"^^xsd:dateTime ;
+  interop:updatedAt "2020-04-04T21:11:33.000Z"^^xsd:dateTime ;
+  interop:registeredAgent projectron:\#id ;
+  interop:hasAccessGrant alice-agents:2f2f3628\/27eae14b .

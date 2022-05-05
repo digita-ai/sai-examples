@@ -1,0 +1,15 @@
+@prefix jack: <https://localhost:3000/jackpapa>
+
+<>
+    a foaf:PersonalProfileDocument, interop:Agent;
+    foaf:maker <http://localhost:3000/jackpapa/profile/card#me>;
+    foaf:primaryTopic <http://localhost:3000/jackpapa/profile/card#me>.
+
+<http://localhost:3000/jackpapa/profile/card#me>
+    a foaf:Person, interop:Agent;
+    solid:oidcIssuer <http://localhost:3000/>;
+    # solid:oidcIssuer <https://solid.community.net/>;
+    # solid:oidcIssuer <https://pod.inrupt.com/>;
+
+    interop:hasRegistrySet jack:registries;
+    interop:hasAuthorizationAgent auth-agent:.

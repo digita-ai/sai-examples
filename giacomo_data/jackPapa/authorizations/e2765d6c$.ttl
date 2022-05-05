@@ -1,0 +1,19 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+@prefix interop: <http://www.w3.org/ns/solid/interop#>
+@prefix jack: <https://localhost:3000/jackpapa>
+@prefix jarvis: <https://localhost:3000/jarvis.example/>
+@prefix projectron: <https://localhost:3000/projectron.example/>
+@prefix jack-authorization: <https://localhost:3000/jackpapa/authorizations/>
+
+jack-authorization:e2765d6c
+  a interop:AccessAuthorization ;
+  interop:grantedBy jack:\#id ;
+  interop:grantedWith jarvis:\#id ;
+  interop:grantedAt "2020-09-05T06:15:01Z"^^xsd:dateTime ;
+  interop:grantee projectron:\#id ;
+  interop:hasAccessNeedGroup projectron:\#d8219b1f ;
+  interop:hasDataAuthorization
+    jack-authorization:54a1b6a0 ,
+    jack-authorization:0e4cb692 .
