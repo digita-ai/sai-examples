@@ -1,5 +1,5 @@
-@prefix interop: <http://www.w3.org/ns/solid/interop#>
-@prefix jack-authorization: <https://localhost:3000/jackpapa/authorizations/>
+@prefix interop: <http://www.w3.org/ns/solid/interop#>.
+@prefix jack-authorization: <https://localhost:3000/jackpapa/authorizations/>.
 
 jack-authorization:
   a interop:AuthorizationRegistry;

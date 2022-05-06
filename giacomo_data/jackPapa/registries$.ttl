@@ -1,8 +1,8 @@
-@prefix interop: <http://www.w3.org/ns/solid/interop#>
-@prefix jack: <https://localhost:3000/jackpapa>
+@prefix interop: <http://www.w3.org/ns/solid/interop#>.
+@prefix jack: <https://localhost:3000/jackpapa>.
 
 jack:registries
     a interop:RegistrySet;
     interop:HasAgentRegistry jack:agents\/;
-    interop:hasAuthorizationRegistry jack:authorizations\/;
+    interop:hasAuthorizationRegistry jack:authorizations\/.
     

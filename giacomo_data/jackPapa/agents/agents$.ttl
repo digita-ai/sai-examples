@@ -7,7 +7,7 @@
 jack-agents:
   a interop:AgentRegistry ;
   interop:hasSocialAgentRegistration
-    alice-agents:c4562da9\/ ,         # Alice
+    jack-agents:c4562da9\/ ;         # registration with Alice
   interop:hasApplicationRegistration
-    alice-agents:2f2f3628\/ ,         # Projectron
+    jack-agents:2f2f3628\/ .         # registration with Projectron
    

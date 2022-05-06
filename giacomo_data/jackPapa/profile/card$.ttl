@@ -1,4 +1,9 @@
-@prefix jack: <https://localhost:3000/jackpapa>
+@prefix jack: <https://localhost:3000/jackpapa> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix auth-agent: <http://authz-agent.example>. # fake uri
+@prefix interop: <http://www.w3.org/ns/solid/interop#>.
+@prefix jack: <https://localhost:3000/jackpapa>.
 
 <>
     a foaf:PersonalProfileDocument, interop:Agent;

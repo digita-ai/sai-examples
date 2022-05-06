@@ -1,14 +1,14 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-@prefix acl: <http://www.w3.org/ns/auth/acl#>
-@prefix interop: <http://www.w3.org/ns/solid/interop#>
-@prefix pm-shapetrees: <http://data.example/shapetrees/pm#>
-@prefix jack: <https://localhost:3000/jackpapa/>
-@prefix jarvis: <https://jarvis.example/>
-@prefix alice: <https://alice.example>      #Fake uri
-PREFIX jack-agents: <https://localhost:3000/jackpapa/agents/>
-PREFIX alice-agents: <https://alice.example/agents/>    #Fake uri
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix acl: <http://www.w3.org/ns/auth/acl#> .
+@prefix interop: <http://www.w3.org/ns/solid/interop#> .
+@prefix pm-shapetrees: <http://data.example/shapetrees/pm#> .
+@prefix jack: <https://localhost:3000/jackpapa/> .
+@prefix jarvis: <https://jarvis.example/> .
+@prefix alice: <https://alice.example> .     #Fake uri
+@prefix jack-agents: <https://localhost:3000/jackpapa/agents/> .
+@prefix alice-agents: <https://alice.example/agents/> .   #Fake uri
 
 jack-agents:c4562da9\/
   a interop:SocialAgentRegistration ;
