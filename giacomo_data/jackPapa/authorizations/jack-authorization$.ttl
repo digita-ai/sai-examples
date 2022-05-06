@@ -1,0 +1,10 @@
+@prefix interop: <http://www.w3.org/ns/solid/interop#>.
+@prefix jack-authorization: <https://localhost:3000/jackpapa/authorizations/>.
+
+jack-authorization:
+  a interop:AuthorizationRegistry;
+  interop:hasAccessAuthorization
+    jack-authorization:e2765d6c ,   # projectron
+    jack-authorization:47e07897 ,   # jarvis
+    jack-authorization:d577d117 ,   # alice
+    jack-authorization:cce01253 .   # performchart

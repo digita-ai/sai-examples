@@ -1,0 +1,37 @@
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+
+# Give all agents Read, Write, and Control permissions on everything
+<#public>
+    a               acl:Authorization;
+    acl:agentClass  foaf:Agent;
+    acl:mode        acl:Read, acl:Write, acl:Append, acl:Control;
+    acl:accessTo    <./>;
+    acl:default     <./>.
+   # acl:mode        acl:Read.
+
+
+
+<#owner>
+    a acl:Authorization;
+    acl:agent <http://localhost:3000/jackpapa/profile/card#me>;
+    acl:agent <mailto:giacomo.papaluca@digita.ai>;
+    acl:accessTo <./>;
+    acl:mode acl:Read, acl:Write, acl:Control.
+
+<#authorization1>
+
+    a acl:Authorization;
+    acl:agent <http://localhost:3000/jackpapa/profile/card#me>;
+    
+    acl:accessTo <./card>;
+    acl:mode        acl:Read, acl:Write, acl:Control.
+
+<#authorization2>
+
+    a acl:Authorization;
+    acl:agentClass foaf:Agent;
+    
+    acl:accessTo   <./card>;
+    acl:mode        acl:Read, acl:Write, acl:Control.

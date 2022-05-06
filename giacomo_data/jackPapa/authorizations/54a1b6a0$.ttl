@@ -1,0 +1,20 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+@prefix interop: <http://www.w3.org/ns/solid/interop#>.
+@prefix jack: <https://localhost:3000/jackpapa>.
+@prefix projectron: <https://projectron.example/>.
+@prefix jack-authorization: <https://localhost:3000/jackpapa/authorization/>.
+@prefix jack-agents: <https://localhost:3000/jackpapa/agents/>.
+@prefix pm-shapetrees: <http://data.example/shapetrees/pm#>.
+
+jack-authorization:54a1b6a0
+  a interop:DataAuthorization ;
+  interop:dataOwner jack:\#id ;
+  interop:grantee projectron:\#id ;
+  interop:registeredShapeTree pm-shapetrees:ProjectTree ;       ### Fake example of data
+  interop:accessMode acl:Read, acl:Create ;
+  interop:creatorAccessMode acl:Update, acl:Delete ;
+  interop:scopeOfAuthorization interop:All ;
+  interop:satisfiesAccessNeed projectron:\#ac54ff1e .
